@@ -14,12 +14,13 @@ class Api
   end
   
   # Create an timeline using a predefined XML template as a REST request.
-  def create(name="Default Name", published="false")
+  def create(name="Default Name", published="false", genre="music")
     xml_req =
     "<?xml version='1.0' encoding='UTF-8'?>
     <timeline>
       <published type='string'>#{published}</published>
       <description>#{name}</description>
+      <genre>#{genre}</genre>
     </timeline>"
     
     request = Net::HTTP::Post.new(@url)
@@ -50,13 +51,14 @@ class Api
   end
   
   # Update an timeline using a predefined XML template as a REST request.
-  def update(id, name="Updated Name", published="false")
+  def update(id, name="Updated Name", published="false", genre="movie")
     xml_req =
     "<?xml version='1.0' encoding='UTF-8'?>
     <timeline>
       <published type='string'>#{published}</published>
       <id type='integer'>#{id}</id>
       <description>#{name}</description>
+      <genre>#{genre}</genre>
     </timeline>"
     
     request = Net::HTTP::Put.new("#{@url}/#{id}.xml")
