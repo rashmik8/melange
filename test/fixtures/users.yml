@@ -5,9 +5,11 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  username: rashmik8
-  email: rashmi@cmu.edu
+  username: rash
+  email: rash@cmu.edu
 # column: value
 #
-two: {}
-#  column: value
+two:
+  username: rashkrish
+  email: rashkrish@cmu.edu
+

@@ -3,6 +3,12 @@ require 'test_helper'
 class TimelinesControllerTest < ActionController::TestCase
   setup do
     @timeline = timelines(:one)
+    @update = {
+      :description => "Simple Plan",
+      :published => "false",
+      :genre => "music",
+      :featured => "not_featured"
+    }
   end
 
   test "should get index" do
@@ -35,7 +41,8 @@ class TimelinesControllerTest < ActionController::TestCase
   end
 
   test "should update timeline" do
-    patch :update, id: @timeline, timeline: { description: @timeline.description, genre: @timeline.genre, published: @timeline.published }
+    #patch :update, id: @timeline, timeline: { description: @timeline.description, genre: @timeline.genre, published: @timeline.published }
+    put :update, :id=>@timeline.to_param, :timeline=>@update
     assert_redirected_to timeline_path(assigns(:timeline))
   end
 

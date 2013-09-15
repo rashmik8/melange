@@ -1,72 +1,9 @@
-<div class='row'>
-<div class='span12 border'>
-<div class='pull-right' id='status-line'>
-&nbsp;&nbsp;&nbsp;&nbsp;Displayed 10 events.
-</div>
-<div class='pull-right'>
-<a class='btn btn-primary' data-toggle='modal' href='#modal-shareurl' rel='tooltip' title='Share url'>
-<i class='icon-share-alt icon-white'></i>
-</a>
-<a class='btn btn-primary' data-toggle='modal' href='#modal-popup' rel='tooltip' title='Get html embed code'>
-<i class='icon-share icon-white'></i>
-</a>
-<a class='btn btn-primary' href='/timelines/64-razia-sultan?fullscr=true' rel='tooltip' title='Full screen view'>
-<i class='icon-resize-full icon-white'></i>
-</a>
-</div>
-<ul class='nav nav-tabs no-bottom-margin'>
-<!--  -->
-<!-- We need following types of urls: -->
-<!-- for tl-view: "/events/q/v2?view=tl&tags=#{@tags}&tlid=#{@tlid}" -->
-<!-- for list-view: "/events/q/v2?view=list&tags=#{@tags}&tlid=#{@tlid}" -->
-<!--  -->
-<li class='active'>
-<a href='/timelines/64-razia-sultan'>
-<i class='icon-time'></i>
-Timeline View
-</a>
-</li>
-<li>
-<a href='/timelines/64-razia-sultan?view=list'>
-<i class='icon-list-alt'></i>
-List View
-</a>
-</li>
-</ul>
-<div id='timeline-embed'></div>
-</div>
-</div>
-<script type='text/javascript'>
-var timeline_config = {
-width:  "100%",
-height: "480",
-source: "/tmpjson/d9cf8e29f847dddd1c29e02a94031fff.json",
-css: '/assets/timeline.css',
-js: '/js/timeline.js'
-}
-
-
+<div id="timeline-embed"></div>
+<script type="text/javascript">
+  var timeline_config = {
+  width: "100%",
+  height: "100%",
+  source: "/assets/example_json.json"
+  }
 </script>
-<script src='/js/timeline-embed.js' type='text/javascript'></script>
-
-<h1><%=@timeline.description%></h1>
-<%@events=@timeline.events%>
-<div class="tab">
-<div class="span_width">
-<ul class="nav nav-tabs no-bottom-margin">
-<li class="active">
-<a href="/timelines/<%=@timeline.description%>">
-<i class="icon-time"></i>
-Timeline View
-</a>
-</li>
-<li>
-<a href="/timelines/<%=@timeline.description%>">
-<i class="icon-list-alt"></i>
-List View
-</a>
-</li>
-</ul>
-<!-- <div id="timeline-embed" class="full-embed " classname="full-embed " style="width: 100%; height: 464px;"><div id="timeline" style="position: relative;" class="vmm-timeline"><div class="container main"><div class="feature"><div class="slider" style="overflow-y: hidden;"><div class="slider-container-mask" style="height: 261px; width: 938px;"><div class="slider-container" style="left: 130px;"><div class="slider-item-container" style="width: 7458px;"><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto;"><div class="content"><div class="content-container layout-text pad-left"><div class="text"><div class="container"><div><a href="http://4.bp.blogspot.com/_1GcKh_0YL-M/TKbsM6NAKPI/AAAAAAAAAtM/v-dTavOpAyM/s1600/razia+sultan+(1).jpg" rel="lightbox"><img src="http://www.wired.com/wiredenterprise/wp-content/uploads/2013/07/ff_googleinfrastructure_large.jpg" style="height:100px;" style="display:block; margin-left:auto; margin-right:auto; max-width:140px; max-height:105px;"></a></div><h2 class="start"><%=@timeline.description%></h2><p> </p></div></div></div></div></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 953px;"><div class="content"><div class="content-container layout-text-media pad-left" style="display: table;"><div class="media" style="float: left;"><div class="media-wrapper"><div class="media-container"><div class="media-image media-shadow"><img src="http://upload.wikimedia.org/wikipedia/commons/5/51/Delhisultanatet_under_iltutmish.jpg" class="media-image" style="max-height: 201px; max-width: 406.8px;"></div><div class="caption"><a href="http://upload.wikimedia.org/wikipedia/commons/5/51/Delhisultanatet_under_iltutmish.jpg" class="hyphenate">http://upload.wikimedia.org/wikipedia/commons/5/51/Delhisultanatet_under_iltutmish.jpg</a></div></div></div></div><div class="text" style="width: 40%; display: table-cell;"><div class="container" style="display: table-cell; width: auto;"><h2 class="date">1210</h2><h3>Qutb-ud-din Aibak dies and his son-in-law Iltutmish becomes the sultan</h3><p> </p></div></div></div></div></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 1906px;"><div class="content"><div class="content-container layout-text-media pad-left" style="display: table;"><div class="media" style="float: left;"><div class="media-wrapper"><div class="media-container"><div class="media-image media-shadow"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Genghis_Khan_empire-en.svg/800px-Genghis_Khan_empire-en.svg.png" class="media-image" style="max-height: 201px; max-width: 406.8px;"></div><div class="caption"><a href="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Genghis_Khan_empire-en.svg/800px-Genghis_Khan_empire-en.svg.png" class="hyphenate">http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Genghis_Khan_empire-en.svg/800px-Genghis_Khan_empire-en.svg.png</a></div></div></div></div><div class="text" style="width: 40%; display: table-cell;"><div class="container" style="display: table-cell; width: auto;"><h2 class="date">1220</h2><h3>Mongol invasians under Gengiz Khan sweep Asia</h3><p>The Mongol invasions and resulting refugees gravely imperilled the kingdom of Iltutmish. But with tact and diplomcay, he was able to preserve the Sultanate's seperate entity.</p></div></div></div></div></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 2859px;"><div class="content"><div class="content-container layout-text pad-left"><div class="text"><div class="container"><h2 class="date">1229</h2><h3>Iltutmish nominates his eldest daughter, Razia, to succeed him</h3><p>On the unexpected death of his crown prince, Iltutmish nominates his eldest daughter - Razia - in supersession of his other grown-up sons.</p></div></div></div></div></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 3812px;"></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 4765px;"></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 5718px;"></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 6671px;"></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 7624px;"></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 8577px;"></div><div class="slider-item" style="width: 678px; height: 261px; display: table; overflow-y: auto; left: 9530px;"></div></div></div></div><div class="nav-next" style="left: 838px; height: 261px;"><div class="nav-container" style="top: 90.5px;"><div class="icon">&nbsp;</div><div class="date">1210</div><div class="title">Qutb-ud-din Aibak dies and his son-in-law Iltutmish becomes the sultan</div></div></div><div class="nav-previous" style="height: 261px; display: none;"><div class="nav-container" style="top: 90.5px;"><div class="icon">&nbsp;</div><div class="date"></div><div class="title">Title Goes Here</div></div></div></div></div><div class="navigation"><div class="timenav" style="left: 469px;"><div class="content"><div class="marker start active" id="marker_VPujBO" style="left: 168px; display: none;"><div class="flag" style="top: 48px;"><div class="flag-content"><div style="margin-right:7px;height:50px;width:2px;float:left;"></div><h3>Razia Sultan</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_ECQTyt" style="left: 188px;"><div class="flag" style="top: 96px;"><div class="flag-content"><div class="thumbnail thumb-photo"></div><h3>Qutb-ud-din Aibak dies and his son-in-law Iltutmish becomes the sultan</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_inHyAV" style="left: 388px;"><div class="flag" style="top: 48px;"><div class="flag-content"><div class="thumbnail thumb-photo"></div><h3>Mongol invasians under Gengiz Khan sweep Asia</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_crKTkK" style="left: 568px;"><div class="flag" style="top: 48px;"><div class="flag-content"><h3>Iltutmish nominates his eldest daughter, Razia, to succeed him</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_yvuvYJ" style="left: 708px;"><div class="flag" style="top: 96px;"><div class="flag-content"><div class="thumbnail thumb-photo"></div><h3>Firuz proclaims himself king</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_ZwzhB" style="left: 728px;"><div class="flag" style="top: 1px;"><div class="flag-content"><div class="thumbnail thumb-wikipedia"></div><h3>Razia becomes the sovereign</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_GcZbiT" style="left: 748px;"><div class="flag" style="top: 48px;"><div class="flag-content"><div class="thumbnail thumb-photo"></div><h3>Razia rules for 3 years</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_yAdYTYW" style="left: 768px;"><div class="flag" style="top: 96px;"><div class="flag-content"><div class="thumbnail thumb-wikipedia"></div><h3>Razia favours Yaqut</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_SkUvZma" style="left: 788px;"><div class="flag" style="top: 1px;"><div class="flag-content"><h3>Conspirators stage a revolt in Lahore, in an attempt to isolate Razia</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_SiKbq" style="left: 792px;"><div class="flag" style="top: 48px;"><div class="flag-content"><div class="thumbnail thumb-photo"></div><h3>Razia imprisoned in Bhatinda</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div><div class="marker" id="marker_cmsMvg" style="left: 804px;"><div class="flag" style="top: 96px;"><div class="flag-content"><div class="thumbnail thumb-photo"></div><h3>Razia murdered by robbers at Kaithal</h3></div></div><div class="dot"></div><div class="line"><div class="event-line"></div></div></div></div><div class="time"><div class="time-interval-minor"><div class="minor" style="left: -479.23515980046454px; width: 4940.684931502463px;"></div></div><div class="time-interval-major"><div style="text-indent: -14px; opacity: 100; left: -10.235159800464544px;">1200</div><div style="text-indent: -14px; opacity: 100; left: 1991.1347032110427px;">1300</div><div style="text-indent: -14px; opacity: 100; left: 3992.449771701999px;">1400</div></div><div class="time-interval"><div style="text-indent: -12px; opacity: 100; left: -10.235159800464544px;">1200</div><div style="text-indent: -12px; opacity: 100; left: 790.3127854041372px;">1240</div><div style="text-indent: -12px; opacity: 100; left: 189.92922376095862px;">1210</div><div style="text-indent: -12px; opacity: 100; left: 390.0388128018392px;">1220</div><div style="text-indent: -12px; opacity: 100; left: 590.2031963632624px;">1230</div><div style="text-indent: -12px; opacity: 100; left: 990.4771689655632px;">1250</div></div></div></div><div class="timenav-background"><div class="timenav-line" style="left: 471px;"></div><div class="timenav-indicator" style="left: 461px;"></div><div class="timenav-interval-background"><div class="top-highlight"></div></div></div><div class="toolbar" style="top: 27px;"><div class="back-home" title="Return to Title" rel="tooltip"><div class="icon"></div></div><div class="zoom-in" title="Expand Timeline" rel="tooltip"><div class="icon"></div></div><div class="zoom-out" title="Contract Timeline" rel="tooltip"><div class="icon"></div></div></div></div></div></div></div> -->
-<!-- </div> -->
-<!-- </div> -->
+<script type="text/javascript" src="/assets/storyjs-embed.js"></script>

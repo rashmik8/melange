@@ -1,5 +1,5 @@
 #
-# Cited by http://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/
+# Cited by http://squarism.com/2011/04/01/how-to-write-a-ruby-rails-3-rest-api/
 #
 
 require 'net/http'

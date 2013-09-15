@@ -1,3 +1,5 @@
+require 'json'
+
 class TimelinesController < ApplicationController
   protect_from_forgery except: :index
   protect_from_forgery except: :create
@@ -24,6 +26,38 @@ class TimelinesController < ApplicationController
   # GET /timelines/1.xml
   def show
     @timeline = Timeline.find(params[:id])
+
+    eevents = @timeline.events
+
+    date = []
+    eevents.each do |event|
+      date_element = {}
+      date_element["startDate"] = "2011,12,10"
+      date_element["headline"] = event.description
+      date_element["text"] = event.description
+      date_element["asset"] = {}
+      date_element["asset"]["media"] = ""
+      date_element["asset"]["credit"] = ""
+      date_element["asset"]["caption"] = ""
+      date.push(date_element)
+    end
+
+    @timelines = {}
+    @timelines["headline"] = @timeline.description
+    @timelines["type"] = "default"
+    @timelines["text"] = @timeline.description
+
+    @timelines["startDate"] = "2011,12,02"
+    @timelines["date"] = date
+
+    upper = {}
+    upper["timeline"] = @timelines
+
+    @timelines = upper.to_json
+    file_path = "./app/assets/javascripts/example_json.json"
+    f = File.open(File.expand_path(file_path), "w")
+    f.puts(@timelines)
+    f.close
 
     respond_to do |format|
       format.html # index.html.erb

@@ -27,12 +27,15 @@ class PublicController < ApplicationController
   end
 
   def preview
-    @timelines = Timeline.all
+    @timelines = Timeline.find(:all, :conditions => ["published = ?", "true"])
+    if user_signed_in?
+      @timelines << Timeline.find(:all, :conditions => ["published = ? AND user_id = ?", "false", current_user.id])
+      @timelines = @timelines.flatten
+    end
     respond_to do |format|
       format.html #responds with default html file
       format.js {render :layout=>false, :locals => {:timeline => @timelines}} #this will be the javascript file we respond with
     end
-
   end
 
 end
