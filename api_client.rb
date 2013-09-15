@@ -27,11 +27,11 @@ doc = Nokogiri::XML.parse api.read
 ids = doc.xpath('timelines/timeline/id').collect {|e| e.text }
  
 # Update last record
-# puts "Updating last record ..."
-# api.update ids.last, "Robert Flaid", "false", "movie"
-# list_timelines(api)
+puts "Updating last record ..."
+api.update ids.last, "Robert Flaid", "false", "movie"
+list_timelines(api)
  
-# # Delete
-# puts "deleting last record ..."
-# api.delete ids.last
-# list_timelines(api)
+# Delete
+puts "deleting last record ..."
+api.delete ids.last
+list_timelines(api)

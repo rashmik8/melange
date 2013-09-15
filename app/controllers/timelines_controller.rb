@@ -1,6 +1,9 @@
 class TimelinesController < ApplicationController
   protect_from_forgery except: :index
   protect_from_forgery except: :create
+  protect_from_forgery except: :update
+  protect_from_forgery except: :destroy
+
   before_action :set_timeline, only: [:show, :edit, :update, :destroy]
 
   # GET /timelines

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  description: MyString
-  published: MyString
-  genre: MyString
+  description: "Sample timeline 1"
+  published: "true"
+  genre: "Random"
 
 two:
-  description: MyString
-  published: MyString
-  genre: MyString
+  description: "Sample timeline 2"
+  published: "false"
+  genre: "Spurious"
