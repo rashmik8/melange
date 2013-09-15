@@ -1,0 +1,19 @@
+<h1><%=@timeline.description%></h1>
+
+<div class="tab">
+<div class="span_width">
+<ul class="nav nav-tabs no-bottom-margin">
+<li class="active">
+<a href="/timelines/<%=@timeline.description%>">
+<i class="icon-time"></i>
+Timeline View
+</a>
+</li>
+<li>
+<a href="/timelines/<%=@timeline.description%>">
+<i class="icon-list-alt"></i>
+List View
+</a>
+</li>
+</div>
+</div>

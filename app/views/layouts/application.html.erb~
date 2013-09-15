@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TimeMelange</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+<script>
+$(function(){
+$('#login').click(function(){
+document.location.href = '/users/sign_in';
+});
+
+window._gaq = [];
+window._gaq = window._gaq || []; _gaq.push(['_setAccount', 'UA-2330466-1']);_gaq.push(['_setDomainName', '.localhost']);_gaq.push(['_addIgnoredRef', 'localhost']);_gaq.push(['_setCustomVar', 1, 'member_type', 'LOGGEDOUT', 1]);
+
+});
+</script>
+</head>
+<body>
+<div data-role="page">
+
+	<div data-role="header" data-theme="c">
+		<p>TimeMelange</p>
+		<% if user_signed_in? %>
+		   Signed in as <%= current_user.email %>.
+		   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+		<% else %>
+		   <div data-role="button" id="login" data-inline="true" class="ui-btn-right">Login</a></div>
+                <% end %>
+                <input type="search" name="search" id="search" value=""/>
+	</div><!-- /header -->
+	
+	<div data-role="navbar">
+	  <ul>
+            <li><a href="/public/home" class="ui-btn-active">Home</a></li>
+	    <li><a href="/public/home" class="ui-btn">Browse</a></li>
+	    <li><a href="/public/home" class="ui-btn">Showcase</a></li>
+	    <li><a href="/public/home" class="ui-btn">New Timeline</a></li>
+	    <li><a href="/public/home" class="ui-btn">FAQ</a></li>
+	  </ul>
+	</div><!-- /navbar -->
+
+	<%= yield %>
+	<div data-role="footer">
+		<div><a href='public/terms'>Terms of use</a>
+		<a href='public/contactus'>Contact Us</a></div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>

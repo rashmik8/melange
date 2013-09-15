@@ -1,0 +1,62 @@
+
+<div>
+  <div class="maindiv box">
+    <div class="offset3 actionmessages">
+      <h3>
+	<b>
+	  TimeMelange
+	</b>
+	enables easy creation and quick sharing of timelines.
+      </h3>
+      <div class="extrapoints">
+	<h3>
+	  <i class="icon-ok icon-white pull-left"></i>
+	  &nbsp;&nbsp;Visit our
+	  <b>
+	    <a href="/public/showcase">showcase</a>
+	  </b>
+	  for sample timelines.
+	</h3>
+	<h3>
+	  <i class="icon-ok icon-white pull-left"></i>
+	  &nbsp;
+	  <b>
+	    <a href="/public/new_timelines">Create</a>
+	  </b>
+	  your own timelines and share.
+	</h3>
+	<h3>
+	  <i class="icon-ok icon-white pull-left"></i>
+	  &nbsp;&nbsp;Refer to the
+	  <b>
+	    <a href="/public/faq">FAQ</a>
+	  </b>
+	  for more information.
+	</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1>Featured Timelines</h1>
+
+<ul data-role="listview" data-theme="s" class="presentationList ui-grid-a" id="slideshow_list_1">
+
+<%
+@timelines.each do |timeline|
+%>
+<li data-inline="true" data-theme="s">
+    <a href="/timelines/<%=timeline.id%>" rel="external">
+      <span class="imgContainer">
+        <img src="http://www.wired.com/wiredenterprise/wp-content/uploads/2013/07/ff_googleinfrastructure_large.jpg" style="height:100px;"/>
+      </span>
+      <p>
+        <span class="title"><strong><%=timeline.description%></strong></span>
+        <span class="from">by <%=timeline.user.username%></span><br /><span class="views">18389 views</span>
+      </p>
+      </a>
+  </li>
+<%
+   end
+   %>
+</ul>

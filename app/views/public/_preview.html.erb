@@ -1,0 +1,16 @@
+<%@timelines.each do |timeline|
+%>
+<li data-inline="true" data-theme="s">
+    <a href="www.google.com" rel="external">
+      <span class="imgContainer">
+        <img src="http://www.wired.com/wiredenterprise/wp-content/uploads/2013/07/ff_googleinfrastructure_large.jpg" style="height:100px;"/>
+      </span>
+      <p>
+        <span class="title"><strong><%=timeline.description%></strong></span>
+        <span class="from">by <%=timeline.user.username%></span><br /><span class="views">18389 views</span>
+      </p>
+      </a>
+  </li>
+<%
+   end
+   %>
