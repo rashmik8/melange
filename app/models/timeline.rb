@@ -6,5 +6,5 @@ class Timeline < ActiveRecord::Base
   has_many :events
 
   belongs_to :user
-  attr_accessible :description, :genre, :published
+  attr_accessible :description, :genre, :published, :headline, :startDate
 end

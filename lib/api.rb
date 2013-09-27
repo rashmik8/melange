@@ -1,5 +1,5 @@
 #
-# Cited by http://squarism.com/2011/04/01/how-to-write-a-ruby-rails-3-rest-api/
+# Code reference http://squarism.com/2011/04/01/how-to-write-a-ruby-rails-3-rest-api/
 #
 
 require 'net/http'

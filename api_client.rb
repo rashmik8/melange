@@ -1,3 +1,6 @@
+#
+# Code snippet from http://squarism.com/2011/04/01/how-to-write-a-ruby-rails-3-rest-api/
+#
 require './lib/api.rb'
 require 'nokogiri'
  
@@ -32,6 +35,6 @@ api.update ids.last, "Robert Flaid", "false", "movie"
 list_timelines(api)
  
 # Delete
-puts "deleting last record ..."
-api.delete ids.last
-list_timelines(api)
+# puts "deleting last record ..."
+# api.delete ids.last
+# list_timelines(api)

@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130915221251) do
+ActiveRecord::Schema.define(version: 20130915233456) do
 
-  create_table "events", force: true do |t|
-    t.string   "description"
-    t.date     "creation_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "timeline_id"
-  end
-
-  add_index "events", ["timeline_id"], name: "index_events_on_timeline_id"
+# Could not dump table "events" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "timelines", force: true do |t|
     t.string   "description"

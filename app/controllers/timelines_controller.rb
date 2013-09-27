@@ -30,24 +30,26 @@ class TimelinesController < ApplicationController
     eevents = @timeline.events
 
     date = []
-    eevents.each do |event|
-      date_element = {}
-      date_element["startDate"] = "2011,12,10"
-      date_element["headline"] = event.description
-      date_element["text"] = event.description
-      date_element["asset"] = {}
-      date_element["asset"]["media"] = ""
-      date_element["asset"]["credit"] = ""
-      date_element["asset"]["caption"] = ""
-      date.push(date_element)
+    if eevents || eevents.empty?
+      eevents.each do |event|
+        date_element = {}
+        date_element["startDate"] = "2011/12/10"
+        date_element["headline"] = event.description
+        date_element["text"] = event.description
+        date_element["asset"] = {}
+        date_element["asset"]["media"] = ""
+        date_element["asset"]["credit"] = ""
+        date_element["asset"]["caption"] = ""
+        date.push(date_element)
+      end
     end
 
     @timelines = {}
-    @timelines["headline"] = @timeline.description
+    @timelines["headline"] = @timeline.headline
     @timelines["type"] = "default"
     @timelines["text"] = @timeline.description
 
-    @timelines["startDate"] = "2011,12,02"
+    @timelines["startDate"] = @timeline.startDate
     @timelines["date"] = date
 
     upper = {}
@@ -84,7 +86,7 @@ class TimelinesController < ApplicationController
       if @timeline.save
         format.html { redirect_to @timeline, notice: 'Timeline was successfully created.' }
         format.json { render action: 'show', status: :created, location: @timeline }
-        format.xml  { render xml: @timeline }
+        format.xml  { redirect_to @timeline, notice: 'Timeline was successfully created.' }
       else
         format.html { render action: 'new' }
         format.json { render json: @timeline.errors, status: :unprocessable_entity }
@@ -128,6 +130,6 @@ class TimelinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timeline_params
-      params.require(:timeline).permit(:description, :published, :genre)
+      params.require(:timeline).permit(:description, :published, :genre, :featured_type, :headline, :startDate)
     end
 end

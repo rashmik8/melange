@@ -4,5 +4,5 @@ class Event < ActiveRecord::Base
   validates :creation_date, :presence => true
 
   belongs_to :timeline
-  attr_accessible :description, :creation_date
+  attr_accessible :description, :creation_date, :headline, :asset
 end
